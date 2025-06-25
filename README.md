@@ -2,7 +2,7 @@
 
 **awdx** (AWS DevOps X) is a next-generation, human-friendly CLI tool for AWS DevSecOps. It helps you manage, automate, and secure your AWS environment with simple, interactive commands and smart suggestions.
 
-![AWDX Banner](assests/AWDX.png)
+![AWDX Banner](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png)
 
 ---
 
@@ -59,7 +59,7 @@ awdx --help
 
 Profile management commands:
 
-![Profile Management Commands](assests/AWDX_PROFILE_HELP.png)
+![Profile Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png)
 
 ---
 - List all AWS profiles:

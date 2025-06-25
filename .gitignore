@@ -231,3 +231,25 @@ $RECYCLE.BIN/
 *.sublime-workspace
 .atom/
 .brackets.json
+
+# Shell script backups
+*.sh~
+
+# Project-specific ignores
+# Ignore any local configuration files
+config.local.*
+settings.local.*
+
+# Ignore any backup files created by editors
+*~
+*.bak
+*.backup
+
+# Ignore any test output or coverage files
+test-results/
+.coverage
+htmlcov/
+
+# Ignore any local development files
+local.*
+dev.*
