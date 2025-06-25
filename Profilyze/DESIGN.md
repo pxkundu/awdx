@@ -42,7 +42,7 @@ awdx profile info <PROFILE>      # Show profile details and security posture
 awdx profile suggest <PROFILE>   # Suggest best practices for a profile
 awdx profile import <FILE>       # Import profiles from file
 awdx profile export <FILE>       # Export profiles to file
-awdx profile help                # Show help for profile commands
+awdx profile --help                # Show help for profile commands
 ```
 
 ---
