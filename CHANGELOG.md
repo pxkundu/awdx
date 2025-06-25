@@ -1,0 +1,107 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+- Comprehensive community standards and contribution guidelines
+- GitHub issue templates for bug reports, feature requests, and documentation
+- Enhanced pull request template with approval requirements
+- Code of Conduct following Contributor Covenant v2.0
+- Security policy and vulnerability reporting guidelines
+- Development workflow script for proper branching strategy
+- Detailed code commenting standards and examples
+- GitFlow-inspired branching strategy documentation
+- Pre-commit check automation
+- Conventional commit message validation
+
+### Changed
+- Updated contributing guide to start from development branch
+- Enhanced PR approval process with minimum maintainer approval requirement
+- Improved code documentation standards with comprehensive docstrings
+- Updated release workflow to follow proper branching strategy
+- Enhanced testing guidelines with commented examples
+- Updated documentation structure and standards
+
+## [0.0.4] - 2025-06-25
+
+### Added
+- Profile management commands (`awdx profile list`, `awdx profile current`, etc.)
+- Interactive profile switching and validation
+- Security posture analysis for AWS profiles
+- Best practice suggestions for profile management
+- GitHub Actions workflow for image hosting
+- Manual publishing script for PyPI
+
+### Changed
+- Updated README with visual elements and GitHub-hosted images
+- Improved project structure with modular design
+- Enhanced documentation with examples and usage guides
+
+### Fixed
+- Resolved virtual environment setup issues
+- Fixed package building and distribution process
+
+## [0.0.3] - 2025-06-24
+
+### Added
+- Initial PyPI package release
+- Basic CLI structure with Typer framework
+- AWS profile management foundation
+- Project documentation and setup scripts
+
+### Changed
+- Updated project configuration for PyPI distribution
+- Improved development environment setup
+
+## [0.0.2] - 2025-06-23
+
+### Added
+- Initial project structure
+- Basic CLI interface
+- Development environment setup
+
+## [0.0.1] - 2025-06-22
+
+### Added
+- Project initialization
+- Basic repository structure
+- License and initial documentation
+
+---
+
+## Types of Changes
+
+- **Added** for new features
+- **Changed** for changes in existing functionality
+- **Deprecated** for soon-to-be removed features
+- **Removed** for now removed features
+- **Fixed** for any bug fixes
+- **Security** in case of vulnerabilities
+
+## Contributing to Changelog
+
+When contributing to this project, please update the changelog by adding an entry under the `[Unreleased]` section. Use the appropriate type of change and provide a clear description of what was added, changed, or fixed.
+
+### Example Entry
+
+```markdown
+### Added
+- New feature description
+
+### Changed
+- Description of changes to existing functionality
+
+### Fixed
+- Description of bug fixes
+```
+
+## Links
+
+- [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+- [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
+- [Contributing Guidelines](CONTRIBUTING.md) 
