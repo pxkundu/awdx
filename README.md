@@ -65,8 +65,7 @@ awdx --help
 ### Profile Management
 Manage AWS profiles with security best practices and validation.
 
-![Profile Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/
-development/assests/AWDX_PROFILE_HELP.png)
+![Profile Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png)
 
 ```bash
 # List all profiles
