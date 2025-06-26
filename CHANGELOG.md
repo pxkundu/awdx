@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **IAMply Module**: Comprehensive AWS IAM management and security analysis
+  - **Basic IAM Management**: User, role, policy, and group management with security insights
+  - **Security Audit**: Comprehensive IAM security audit with risk assessment and export capabilities
+  - **Access Analysis**: Effective permission analysis and access pattern identification
+  - **Compliance Checking**: CIS, SOC2, and PCI compliance validation
+  - **Smart Recommendations**: AI-powered recommendations with automated remediation
+  - **Data Export**: JSON/CSV export for external analysis and reporting
+  - **Real-world DevSecOps Use Cases**: Incident response, CI/CD integration, compliance automation
+  - **Risk Assessment**: Critical, high, medium, and low risk categorization
+  - **Automated Remediation**: Safe auto-fix capabilities with dry-run mode
+  - **Permission Analysis**: Deep permission analysis with privilege escalation detection
 - **Costlyzer Module**: Comprehensive AWS cost analysis and optimization capabilities
   - Cost summary and breakdown by service
   - Cost trends analysis with pattern identification

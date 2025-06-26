@@ -20,6 +20,7 @@
 ## Features
 - **Profile Management:** Create, switch, and validate AWS profiles interactively
 - **Cost Intelligence:** Advanced cost analysis with anomaly detection and forecasting
+- **IAM Management:** Comprehensive IAM security audit and compliance checking
 - **Security Audits:** Scan for misconfigurations, exposed secrets, and risky permissions
 - **Resource Checks:** Instantly check S3 buckets, security groups, IAM users, and more
 - **Smart Suggestions:** Receive actionable best-practice tips after every action
@@ -118,6 +119,40 @@ awdx cost forecast --months 3
 
 📖 **Full Documentation:** [Costlyzer Module README](https://github.com/pxkundu/awdx/tree/development/Costlyzer)
 
+### IAM Management
+Comprehensive IAM security audit, compliance checking, and smart automation.
+
+```bash
+# Security audit
+awdx iam audit
+🔍 Starting comprehensive IAM security audit...
+🔍 Checking root account usage...
+   ✅ Using IAM user/role
+🔍 Checking MFA configuration...
+   ❌ HIGH: 3 users without MFA
+🔍 Audit Summary:
+  🔴 Critical Issues: 0
+  🟠 High Issues: 1
+  🟡 Medium Issues: 1
+
+# Analyze access patterns
+awdx iam access
+🔑 Analyzing IAM access patterns...
+👤 admin (user)
+   ⚡ Total Permissions: 45
+   🎯 Privileged: 12
+   ❌ Wildcards: 3
+
+# Smart recommendations
+awdx iam smart --auto-fix --dry-run
+🚀 Generating smart IAM recommendations...
+1. 🔴 Remove unused users 🤖
+2. 🟠 Rotate old access keys 👤
+3. 🔴 Review wildcard permissions 👤
+```
+
+📖 **Full Documentation:** [IAMply Module README](https://github.com/pxkundu/awdx/tree/development/IAMply)
+
 ---
 
 ## Future Plans
@@ -126,7 +161,6 @@ awdx cost forecast --months 3
 - **Secrex:** Secret management and rotation automation
 - **S3ntry:** S3 bucket security and compliance checks
 - **SecuTide:** Security posture assessment and remediation
-- **IAMply:** IAM policy analysis and optimization
 
 ### Advanced Features
 - **AI-Powered Insights:** Natural language queries and intelligent recommendations
@@ -149,6 +183,7 @@ Early development with active community contributions. The project follows a mod
 ### Current Status
 - ✅ **Profilyze Module:** Complete with full feature set
 - ✅ **Costlyzer Module:** Complete with smart analytics
+- ✅ **IAMply Module:** Complete with security audit and compliance
 - 🚧 **Core Infrastructure:** Stable and production-ready
 - 📋 **Documentation:** Comprehensive guides and examples
 

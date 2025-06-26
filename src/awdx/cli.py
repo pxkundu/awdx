@@ -1,12 +1,14 @@
 import typer
 from awdx.profilyze.profile_commands import profile_app
 from awdx.costlyzer.cost_commands import cost_app
+from awdx.iamply.iam_commands import iam_app
 
 app = typer.Typer(help="awdx: AWS DevOps X - Human-friendly AWS DevSecOps CLI tool.")
 
 # Add subcommands
 app.add_typer(profile_app, name="profile")
 app.add_typer(cost_app, name="cost")
+app.add_typer(iam_app, name="iam")
 
 ASCII_ART = r"""
  █████╗ ██╗    ██╗█████╗ ██╗  ██╗
