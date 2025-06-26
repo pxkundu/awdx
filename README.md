@@ -91,8 +91,7 @@ awdx profile validate devops
 ### Cost Analysis
 Monitor, analyze, and optimize AWS spending with intelligent insights.
 
-![Cost Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/
-development/assests/AWDX_COST_HELP.png)
+![Cost Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png)
 
 ```bash
 # Get cost summary
