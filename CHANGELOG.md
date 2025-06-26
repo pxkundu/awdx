@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Costlyzer Module**: Comprehensive AWS cost analysis and optimization capabilities
+  - Cost summary and breakdown by service
+  - Cost trends analysis with pattern identification
+  - Cost monitoring alerts and budget management
+  - Cost optimization recommendations with service-specific tips
+  - Data export functionality (CSV/JSON) for external analysis
+  - Budget creation and management tools
+  - **Smart Anomaly Detection**: Statistical analysis to detect unusual spending patterns
+  - **Cost Forecasting**: Linear regression-based predictions with confidence intervals
+  - **Cost Comparison**: Side-by-side analysis across different time periods
+  - **Tag-Based Analysis**: Cost allocation analysis by resource tags
+  - **Savings Calculator**: ROI analysis with multiple scenarios (conservative/moderate/aggressive)
 - Comprehensive community standards and contribution guidelines
 - GitHub issue templates for bug reports, feature requests, and documentation
 - Enhanced pull request template with approval requirements
@@ -26,6 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated release workflow to follow proper branching strategy
 - Enhanced testing guidelines with commented examples
 - Updated documentation structure and standards
+- Enhanced main README with Costlyzer module documentation and examples
+- **Simplified root README**: Cleaned up and made more concise, focusing on high-level use cases
+- **Improved PyPI metadata**: Added keywords, classifiers, and GitHub repository links
+- **Modular documentation**: Moved detailed command documentation to module-specific READMEs
 
 ## [0.0.4] - 2025-06-25
 

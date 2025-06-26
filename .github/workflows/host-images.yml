@@ -36,10 +36,14 @@ jobs:
         echo "### Profile Management Commands" >> $GITHUB_STEP_SUMMARY
         echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Cost Management Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Usage in README.md" >> $GITHUB_STEP_SUMMARY
         echo "Replace local paths with:" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_PROFILE_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_COST_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         
     - name: Success message
       run: |
@@ -48,5 +52,6 @@ jobs:
         echo "🖼️ Your images are now available at:"
         echo "   AWDX Banner: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png"
         echo "   Profile Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png"
+        echo "   Cost Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png"
         echo ""
         echo "📝 Your README.md is already updated to use these URLs for PyPI display!" 

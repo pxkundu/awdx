@@ -1,8 +1,12 @@
 import typer
-from .profilyze.profile_commands import profile_app
+from awdx.profilyze.profile_commands import profile_app
+from awdx.costlyzer.cost_commands import cost_app
 
 app = typer.Typer(help="awdx: AWS DevOps X - Human-friendly AWS DevSecOps CLI tool.")
+
+# Add subcommands
 app.add_typer(profile_app, name="profile")
+app.add_typer(cost_app, name="cost")
 
 ASCII_ART = r"""
  █████╗ ██╗    ██╗█████╗ ██╗  ██╗
@@ -17,8 +21,6 @@ ASCII_ART = r"""
 def main(ctx: typer.Context):
     if ctx.invoked_subcommand is None:
         typer.echo(ASCII_ART)
-        help_text = ctx.get_help()
-        typer.echo(help_text)
         about_block = (
             "\u256D\u2500 About " + "\u2500" * 56 + "\u256E\n"
             "\u2502 Developed by: Partha Sarathi Kundu" + " " * 29 + "\u2502\n"
@@ -26,6 +28,8 @@ def main(ctx: typer.Context):
             "\u2570" + "\u2500" * 64 + "\u256F\n"
         )
         typer.echo(about_block)
+        # Show help for the root app (this will include all subcommands)
+        typer.echo(ctx.get_help())
 
 if __name__ == "__main__":
     app() 

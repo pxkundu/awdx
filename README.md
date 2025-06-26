@@ -10,20 +10,21 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Project Status](#status)
+- [Quick Start](#quick-start)
+- [Modules](#modules)
+- [Future Plans](#future-plans)
+- [Project Status](#project-status)
 
 ---
 
 ## Features
-- **Profile Management:** Create, switch, and validate AWS profiles interactively.
-- **Security Audits:** Scan for misconfigurations, exposed secrets, and risky permissions.
-- **Cost Insights:** Get clear summaries of your AWS spending.
-- **Resource Checks:** Instantly check S3 buckets, security groups, IAM users, and more for best practices.
-- **Automation:** Run common DevSecOps tasks with a single, smart command.
-- **Suggestions:** Receive actionable best-practice tips after every action.
-- **Human-Friendly CLI:** Simple, memorable commands and interactive prompts.
-- **Future:** AI/NLP-powered natural language commands.
+- **Profile Management:** Create, switch, and validate AWS profiles interactively
+- **Cost Intelligence:** Advanced cost analysis with anomaly detection and forecasting
+- **Security Audits:** Scan for misconfigurations, exposed secrets, and risky permissions
+- **Resource Checks:** Instantly check S3 buckets, security groups, IAM users, and more
+- **Smart Suggestions:** Receive actionable best-practice tips after every action
+- **Human-Friendly CLI:** Simple, memorable commands and interactive prompts
+- **Future:** AI/NLP-powered natural language commands
 
 ---
 
@@ -50,93 +51,114 @@ pip install awdx
 
 ---
 
-## Usage
+## Quick Start
 
 Show help and available commands:
 ```bash
 awdx --help
 ```
 
-Profile management commands:
-
-![Profile Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png)
-
 ---
-- List all AWS profiles:
-  ```bash
-  awdx profile list
-  ```
-- Show the current AWS profile:
-  ```bash
-  awdx profile current
-  ```
-- Switch to a different AWS profile:
-  ```bash
-  awdx profile switch <profile>
-  ```
-- Add a new AWS profile interactively:
-  ```bash
-  awdx profile add
-  ```
-- Edit an existing AWS profile:
-  ```bash
-  awdx profile edit <profile>
-  ```
-- Delete an AWS profile:
-  ```bash
-  awdx profile delete <profile>
-  ```
-- Validate credentials and permissions for a profile:
-  ```bash
-  awdx profile validate <profile>
-  ```
-- Show profile details and security posture:
-  ```bash
-  awdx profile info <profile>
-  ```
-- Suggest best practices for a profile:
-  ```bash
-  awdx profile suggest <profile>
-  ```
-- Import profiles from a file (YAML/JSON):
-  ```bash
-  awdx profile import <file>
-  ```
-- Export profiles to a file (YAML/JSON):
-  ```bash
-  awdx profile export <file>
-  ```
 
-Example interactive session:
-```
-$ awdx profile list
+## Modules
+
+### Profile Management
+Manage AWS profiles with security best practices and validation.
+
+![Profile Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/
+development/assests/AWDX_PROFILE_HELP.png)
+
+```bash
+# List all profiles
+awdx profile list
 👤 Found 3 profiles:
 🎯 👤 default (current)
 👤 devops
 👤 prod
 
-$ awdx profile info devops
-ℹ️ Profile: devops
-  🔑 AWS Access Key ID: ASIA4TWKQEDUPVYSYMJV
-  🌍 Region: N/A
-🔒 Security posture:
-    ✅ MFA: Check if enabled in AWS Console
-    ✅ Key rotation: Rotate keys every 90 days
-    🚫 Avoid using root credentials
-💡 Tip: Check for MFA and key rotation status for better security.
+# Switch profiles
+awdx profile switch devops
+✅ To switch profile, run:
+  export AWS_PROFILE=devops
 
-$ awdx profile suggest devops
-💡 Suggestions for profile: devops
-✅ Enable MFA for all IAM users.
-✅ Rotate access keys every 90 days.
-✅ Remove unused or old access keys.
-🚫 Avoid using root credentials for automation.
-✅ Use least privilege IAM policies.
-💡 Tip: Enable MFA, rotate keys regularly, and avoid using root credentials.
+# Validate credentials
+awdx profile validate devops
+✅ Profile 'devops' is valid. Account: 123456789012, ARN: arn:aws:iam::123456789012:user/devops
 ```
+
+📖 **Full Documentation:** [Profilyze Module README](https://github.com/pxkundu/awdx/blob/development/Profilyze/DESIGN.md)
+
+### Cost Analysis
+Monitor, analyze, and optimize AWS spending with intelligent insights.
+
+![Cost Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/
+development/assests/AWDX_COST_HELP.png)
+
+```bash
+# Get cost summary
+awdx cost summary
+💰 Total Cost: $1,234.56
+📊 Top 10 Services by Cost:
+   1. Amazon EC2                    $567.89
+   2. Amazon S3                     $234.56
+   3. Amazon RDS                    $123.45
+
+# Detect anomalies
+awdx cost anomaly --threshold 2.5
+🔍 Detecting cost anomalies for the last 30 days...
+📊 Average daily cost: $123.45
+📈 Standard deviation: $45.67
+✅ No significant anomalies detected!
+
+# Forecast costs
+awdx cost forecast --months 3
+🔮 Forecasting costs for the next 3 months...
+📈 Trend direction: Upward
+📊 Monthly change: $45.67
+🎯 Trend confidence: 85.2%
+```
+
+📖 **Full Documentation:** [Costlyzer Module README](https://github.com/pxkundu/awdx/tree/development/Costlyzer)
+
+---
+
+## Future Plans
+
+### Upcoming Modules
+- **Secrex:** Secret management and rotation automation
+- **S3ntry:** S3 bucket security and compliance checks
+- **SecuTide:** Security posture assessment and remediation
+- **IAMply:** IAM policy analysis and optimization
+
+### Advanced Features
+- **AI-Powered Insights:** Natural language queries and intelligent recommendations
+- **Multi-Cloud Support:** Extend beyond AWS to Azure and GCP
+- **Integration Hub:** Connect with popular DevOps tools and CI/CD pipelines
+- **Real-time Monitoring:** Live cost and security monitoring with alerts
+
+### Enterprise Features
+- **Team Collaboration:** Multi-user support with role-based access
+- **Audit Trails:** Comprehensive logging and compliance reporting
+- **Custom Policies:** Define organization-specific security and cost policies
+- **API Access:** RESTful API for integration with existing tools
 
 ---
 
 ## Project Status
 
-Early development. See `docs/` for design and installation details. 
+Early development with active community contributions. The project follows a modular architecture allowing for easy extension and customization.
+
+### Current Status
+- ✅ **Profilyze Module:** Complete with full feature set
+- ✅ **Costlyzer Module:** Complete with smart analytics
+- 🚧 **Core Infrastructure:** Stable and production-ready
+- 📋 **Documentation:** Comprehensive guides and examples
+
+### Contributing
+We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
+
+### Community
+- 📖 **Documentation:** [GitHub Wiki](https://github.com/pxkundu/awdx/wiki)
+- 🐛 **Issues:** [GitHub Issues](https://github.com/pxkundu/awdx/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/pxkundu/awdx/discussions)
+- 📄 **License:** [MIT License](LICENSE) 
