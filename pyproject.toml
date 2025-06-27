@@ -1,6 +1,6 @@
 [project]
 name = "awdx"
-version = "0.0.4"
+version = "0.0.5"
 description = "AWS DevOps X: Human-friendly, interactive AWS DevSecOps CLI tool."
 authors = [
   { name = "Partha Sarathi Kundu", email = "pxkundu2@shockers.wichita.edu" }
@@ -17,7 +17,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
