@@ -39,11 +39,27 @@ jobs:
         echo "### Cost Management Commands" >> $GITHUB_STEP_SUMMARY
         echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### IAM Management Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_IAM_HELP.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### S3 Security Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Secret Management Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Security Assessment Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Usage in README.md" >> $GITHUB_STEP_SUMMARY
         echo "Replace local paths with:" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_PROFILE_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_COST_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_IAM_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_IAM_HELP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_S3_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_SECRET_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_SECURITY_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         
     - name: Success message
       run: |
@@ -53,5 +69,9 @@ jobs:
         echo "   AWDX Banner: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png"
         echo "   Profile Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_PROFILE_HELP.png"
         echo "   Cost Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_COST_HELP.png"
+        echo "   IAM Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_IAM_HELP.png"
+        echo "   S3 Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png"
+        echo "   Secret Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png"
+        echo "   Security Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png"
         echo ""
         echo "📝 Your README.md is already updated to use these URLs for PyPI display!" 

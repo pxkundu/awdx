@@ -21,8 +21,9 @@
 - **Profile Management:** Create, switch, and validate AWS profiles interactively
 - **Cost Intelligence:** Advanced cost analysis with anomaly detection and forecasting
 - **IAM Management:** Comprehensive IAM security audit and compliance checking
-- **Security Audits:** Scan for misconfigurations, exposed secrets, and risky permissions
-- **Resource Checks:** Instantly check S3 buckets, security groups, IAM users, and more
+- **S3 Security:** Complete S3 bucket security assessment and compliance monitoring
+- **Secret Management:** Automated secret discovery, rotation, and compliance
+- **Security Assessment:** Comprehensive security posture and vulnerability scanning
 - **Smart Suggestions:** Receive actionable best-practice tips after every action
 - **Human-Friendly CLI:** Simple, memorable commands and interactive prompts
 - **Future:** AI/NLP-powered natural language commands
@@ -122,6 +123,8 @@ awdx cost forecast --months 3
 ### IAM Management
 Comprehensive IAM security audit, compliance checking, and smart automation.
 
+![IAM Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_IAM_HELP.png)
+
 ```bash
 # Security audit
 awdx iam audit
@@ -153,16 +156,111 @@ awdx iam smart --auto-fix --dry-run
 
 📖 **Full Documentation:** [IAMply Module README](https://github.com/pxkundu/awdx/tree/development/IAMply)
 
+### S3 Security & Compliance
+Complete S3 bucket security assessment, compliance monitoring, and automated remediation.
+
+![S3 Security Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png)
+
+```bash
+# Comprehensive S3 audit
+awdx s3 audit
+🪣 Starting comprehensive S3 security audit...
+🔍 Checking bucket configurations...
+   ✅ Encryption: Enabled
+   ❌ HIGH: Public access detected
+🔍 Audit Summary:
+  🔴 Critical Issues: 0
+  🟠 High Issues: 2
+  🟡 Medium Issues: 3
+
+# Scan for vulnerabilities
+awdx s3 scan --type public
+🔍 Scanning for public S3 buckets...
+🚨 Found 2 publicly accessible buckets:
+   - my-public-bucket (HIGH RISK)
+   - test-bucket (MEDIUM RISK)
+
+# Compliance assessment
+awdx s3 compliance --framework sox
+📋 Assessing SOX compliance for S3...
+✅ Encryption controls: PASS
+❌ Access logging: FAIL
+✅ Versioning: PASS
+```
+
+📖 **Full Documentation:** [S3ntry Module README](https://github.com/pxkundu/awdx/tree/development/S3ntry)
+
+### Secret Management
+Automated secret discovery, rotation, compliance monitoring, and smart remediation.
+
+![Secret Management Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png)
+
+```bash
+# Discover all secrets
+awdx secret discover
+🔐 Discovering secrets across AWS services...
+🔍 Found 15 secrets:
+   - 8 in Secrets Manager
+   - 5 in Parameter Store
+   - 2 in IAM access keys
+❌ HIGH: 3 secrets expired
+⚠️ MEDIUM: 5 secrets expiring soon
+
+# Rotate secrets
+awdx secret rotate my-secret-id
+🔄 Rotating secret: my-secret-id
+✅ Secret rotated successfully
+📅 Next rotation: 2024-02-15
+
+# Monitor secret health
+awdx secret monitor --days 30
+📊 Monitoring secret health for last 30 days...
+✅ Successful rotations: 12
+❌ Failed rotations: 1
+⚠️ Expiring soon: 3
+```
+
+📖 **Full Documentation:** [Secrex Module README](https://github.com/pxkundu/awdx/tree/development/Secrex)
+
+### Security Assessment
+Comprehensive security posture assessment, vulnerability scanning, and incident response.
+
+![Security Assessment Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png)
+
+```bash
+# Security posture assessment
+awdx security posture
+🛡️ Starting comprehensive security posture assessment...
+🔍 Network Security: 85/100
+🔍 IAM Security: 92/100
+🔍 Data Protection: 78/100
+📊 Overall Security Score: 85/100
+
+# Vulnerability scanning
+awdx security vulnerabilities --service ec2
+🚨 Scanning EC2 instances for vulnerabilities...
+🔍 Found 5 security issues:
+   - 2 open security groups (HIGH)
+   - 1 unencrypted EBS volume (MEDIUM)
+   - 2 outdated AMIs (LOW)
+
+# Incident response
+awdx security incident --type breach
+🚨 Initiating incident response for security breach...
+📋 Investigation checklist:
+   - CloudTrail logs analysis
+   - IAM access review
+   - Resource access audit
+   - Threat detection alerts
+```
+
+📖 **Full Documentation:** [SecuTide Module README](https://github.com/pxkundu/awdx/tree/development/SecuTide)
+
 ---
 
 ## Future Plans
 
-### Upcoming Modules
-- **Secrex:** Secret management and rotation automation
-- **S3ntry:** S3 bucket security and compliance checks
-- **SecuTide:** Security posture assessment and remediation
-
-### Advanced Features
+### Upcoming Features
 - **AI-Powered Insights:** Natural language queries and intelligent recommendations
 - **Multi-Cloud Support:** Extend beyond AWS to Azure and GCP
 - **Integration Hub:** Connect with popular DevOps tools and CI/CD pipelines
@@ -178,12 +276,15 @@ awdx iam smart --auto-fix --dry-run
 
 ## Project Status
 
-Early development with active community contributions. The project follows a modular architecture allowing for easy extension and customization.
+Active development with comprehensive module coverage. The project follows a modular architecture allowing for easy extension and customization.
 
 ### Current Status
 - ✅ **Profilyze Module:** Complete with full feature set
 - ✅ **Costlyzer Module:** Complete with smart analytics
 - ✅ **IAMply Module:** Complete with security audit and compliance
+- ✅ **S3ntry Module:** Complete with security assessment and compliance
+- ✅ **Secrex Module:** Complete with secret management and rotation
+- ✅ **SecuTide Module:** Complete with security posture and incident response
 - 🚧 **Core Infrastructure:** Stable and production-ready
 - 📋 **Documentation:** Comprehensive guides and examples
 
