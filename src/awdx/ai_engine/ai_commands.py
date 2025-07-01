@@ -27,10 +27,21 @@ from .config_manager import AIConfig
 
 # Import version info from main package
 try:
-    from awdx import __version__, __homepage__
+    from awdx import __version__, __homepage__, __author__
 except ImportError:
     __version__ = "0.0.9-dev"
     __homepage__ = "https://github.com/pxkundu/awdx"
+    __author__ = "Partha Sarathi Kundu"
+
+# ASCII Art for AWDX
+ASCII_ART = r"""
+ █████╗ ██╗    ██╗█████╗ ██╗  ██╗
+██╔══██╗██║    ██║██╔═██╗╚██╗██╔╝
+███████║██║ █╗ ██║██║ ██║ ╚███╔╝
+██╔══██║██║███╗██║██║ ██║ ██╔██╗
+██║  ██║╚███╔███╔╝█████╔╝██╔╝ ██╗
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚════╝ ╚═╝  ╚═╝
+"""
 
 # Create AI command app
 ai_app = typer.Typer(
@@ -41,6 +52,13 @@ ai_app = typer.Typer(
 )
 
 console = Console()
+
+def get_ai_config() -> Optional[AIConfig]:
+    """Get current AI configuration."""
+    try:
+        return AIConfig.load_from_file()
+    except Exception:
+        return None
 
 def show_awdx_ai_art():
     """Display AWDX AI ASCII art."""
@@ -85,9 +103,28 @@ def ai_main(
         • Interactive chat sessions
     """
     if version:
-        console.print(f"🤖 [bold]AWDX AI v{__version__}[/bold]")
-        console.print("Powered by Google Gemini 1.5 Flash")
-        console.print(f"🔗 {__homepage__}")
+        # Show ASCII art and comprehensive AI version information
+        typer.echo(ASCII_ART)
+        typer.echo(f"🤖 AWDX AI v{__version__} - AWS DevOps X")
+        typer.echo("Gen AI-powered AWS DevSecOps CLI tool")
+        typer.echo(f"🔗 {__homepage__}")
+        typer.echo(f"👨‍💻 Developed by: {__author__} (@pxkundu)")
+        typer.echo()
+        typer.echo("🧠 AI Engine: Google Gemini 1.5 Flash")
+        typer.echo("🎯 Capabilities: Natural language AWS DevSecOps automation")
+        typer.echo("💬 Usage: awdx ai chat  # Interactive session")
+        typer.echo("        awdx ask 'your command here'")
+        
+        # Show AI configuration status
+        try:
+            config = get_ai_config()
+            if config and config.has_valid_api_key():
+                typer.echo("⚙️ Status: ✅ Configured and ready")
+            else:
+                typer.echo("⚙️ Status: ⚠️ Not configured - run 'awdx ai configure'")
+        except Exception:
+            typer.echo("⚙️ Status: ⚠️ Configuration needed - run 'awdx ai configure'")
+        
         raise typer.Exit()
     
     if help:
