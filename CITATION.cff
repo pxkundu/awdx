@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool"
+authors:
+  - family-names: "Kundu"
+    given-names: "Partha Sarathi"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # Add your ORCID if you have one
+    email: "pxkundu2@shockers.wichita.edu"
+    affiliation: "Wichita State University"
+repository-code: "https://github.com/pxkundu/awdx"
+url: "https://github.com/pxkundu/awdx"
+repository-artifact: "https://pypi.org/project/awdx/"
+abstract: >
+  AWDX is a comprehensive Gen AI-powered AWS DevSecOps CLI tool that provides
+  natural language interface for AWS resource management. It includes six core
+  modules: Profilyze (profile management), Costlyzer (cost analysis), IAMply
+  (IAM security), S3ntry (S3 security), Secrex (secret management), and
+  SecuTide (security assessment). The tool integrates Google Gemini AI for
+  intelligent command processing and natural language automation of AWS DevSecOps workflows.
+keywords:
+  - AWS
+  - DevSecOps
+  - CLI tool
+  - Artificial Intelligence
+  - Natural Language Processing
+  - Cloud Security
+  - Cost Management
+  - Infrastructure Management
+  - Python
+license: MIT
+license-url: "https://github.com/pxkundu/awdx/blob/main/LICENSE"
+version: "0.0.9"
+date-released: "2024-01-15"
+commit: "main"
+doi: ""  # Add DOI if you get one from Zenodo
+preferred-citation:
+  type: software
+  title: "AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool"
+  authors:
+    - family-names: "Kundu"
+      given-names: "Partha Sarathi"
+      email: "pxkundu2@shockers.wichita.edu"
+  year: 2024
+  url: "https://github.com/pxkundu/awdx"
+  repository-code: "https://github.com/pxkundu/awdx"
+  license: "MIT" 

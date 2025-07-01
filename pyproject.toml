@@ -1,8 +1,11 @@
 [project]
 name = "awdx"
 version = "0.0.9"
-description = "AWS DevOps X: Gen AI-powered AWS DevSecOps CLI tool with natural language interface."
+description = "AWS DevOps X: Gen AI-powered AWS DevSecOps CLI tool with natural language interface. Copyright (c) 2024 Partha Sarathi Kundu."
 authors = [
+  { name = "Partha Sarathi Kundu", email = "pxkundu2@shockers.wichita.edu" }
+]
+maintainers = [
   { name = "Partha Sarathi Kundu", email = "pxkundu2@shockers.wichita.edu" }
 ]
 readme = "README.md"

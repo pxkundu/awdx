@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+AWDX CLI - Main Command Line Interface
+
+Copyright (c) 2024 Partha Sarathi Kundu
+Licensed under the MIT License.
+Author: Partha Sarathi Kundu <pxkundu2@shockers.wichita.edu>
+"""
+
 import typer
 from awdx import __version__, __homepage__, __author__
 from awdx.profilyze.profile_commands import profile_app

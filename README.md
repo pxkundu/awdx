@@ -295,4 +295,42 @@ We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for deta
 - 📖 **Documentation:** [GitHub Wiki](https://github.com/pxkundu/awdx/wiki)
 - 🐛 **Issues:** [GitHub Issues](https://github.com/pxkundu/awdx/issues)
 - 💬 **Discussions:** [GitHub Discussions](https://github.com/pxkundu/awdx/discussions)
-- 📄 **License:** [MIT License](LICENSE) 
+- 📄 **License:** [MIT License](LICENSE)
+
+---
+
+## 👨‍💻 Author & Attribution
+
+**AWDX** is created and maintained by **Partha Sarathi Kundu** (@pxkundu).
+
+### Copyright & License
+- **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
+- **License**: MIT License - see [LICENSE](LICENSE) for details
+- **Trademark**: "AWDX" and "AWS DevOps X" are trademarks of Partha Sarathi Kundu
+
+### Citation
+If you use AWDX in academic research or commercial projects, please cite:
+
+```
+Kundu, P. S. (2024). AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool. 
+GitHub. https://github.com/pxkundu/awdx
+```
+
+For academic papers (BibTeX):
+```bibtex
+@software{awdx2024,
+  author = {Kundu, Partha Sarathi},
+  title = {AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool},
+  year = {2024},
+  url = {https://github.com/pxkundu/awdx},
+  note = {MIT License}
+}
+```
+
+### Contact
+- **Email**: pxkundu2@shockers.wichita.edu
+- **GitHub**: [@pxkundu](https://github.com/pxkundu)
+- **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
+
+### Contributors
+See [AUTHORS.md](AUTHORS.md) for a complete list of contributors and their contributions. 

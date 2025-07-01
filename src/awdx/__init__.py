@@ -1,6 +1,12 @@
 """
 AWDX - AWS DevOps X
 Gen AI-powered AWS DevSecOps CLI tool with natural language interface.
+
+Copyright (c) 2024 Partha Sarathi Kundu
+
+Licensed under the MIT License. See LICENSE file in the project root for details.
+Author: Partha Sarathi Kundu <pxkundu2@shockers.wichita.edu>
+GitHub: https://github.com/pxkundu/awdx
 """
 
 try:
