@@ -1,7 +1,7 @@
 [project]
 name = "awdx"
-version = "0.0.8"
-description = "AWS DevOps X: Human-friendly, interactive AWS DevSecOps CLI tool."
+version = "0.0.9"
+description = "AWS DevOps X: Gen AI-powered AWS DevSecOps CLI tool with natural language interface."
 authors = [
   { name = "Partha Sarathi Kundu", email = "pxkundu2@shockers.wichita.edu" }
 ]
@@ -10,9 +10,14 @@ license = "MIT"
 requires-python = ">=3.8"
 dependencies = [
     "typer[all] >=0.9.0",
-    "boto3 >=1.28.0"
+    "boto3 >=1.28.0",
+    "google-generativeai >=0.3.0",
+    "rich >=13.0.0",
+    "pyyaml >=6.0",
+    "pillow >=9.0.0",
+    "importlib-metadata >=4.0.0; python_version < '3.8'"
 ]
-keywords = ["aws", "devops", "devsecops", "cli", "cost-analysis", "security", "automation"]
+keywords = ["aws", "devops", "devsecops", "cli", "cost-analysis", "security", "automation", "ai", "nlp", "gemini", "natural-language"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -31,6 +36,38 @@ classifiers = [
 ]
 urls = {Homepage = "https://github.com/pxkundu/awdx", Repository = "https://github.com/pxkundu/awdx"}
 
+[project.optional-dependencies]
+dev = [
+    "pytest >=7.0.0",
+    "pytest-cov >=4.0.0",
+    "pytest-asyncio >=0.21.0",
+    "pytest-mock >=3.10.0"
+]
+security = [
+    "bandit[toml] >=1.7.0",
+    "safety >=3.0.0",
+    "flake8 >=6.0.0",
+    "mypy >=1.0.0",
+    "black >=23.0.0",
+    "isort >=5.12.0",
+    "pylint >=3.0.0"
+]
+test = [
+    "pytest >=7.0.0",
+    "pytest-cov >=4.0.0",
+    "pytest-asyncio >=0.21.0",
+    "pytest-mock >=3.10.0",
+    "bandit[toml] >=1.7.0",
+    "safety >=3.0.0",
+    "flake8 >=6.0.0",
+    "mypy >=1.0.0",
+    "black >=23.0.0",
+    "isort >=5.12.0",
+    "pylint >=3.0.0",
+    "moto[all] >=4.0.0",
+    "types-PyYAML >=6.0.0"
+]
+
 [project.scripts]
 awdx = "awdx.__main__:app"
 
@@ -45,4 +82,100 @@ where = ["src"]
 awdx = ["docs/*.png"]
 
 [tool.setuptools.data-files]
-"" = ["docs/*.png"] 
+"" = ["docs/*.png"]
+
+# Security and Testing Tool Configuration
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", "scripts/venv"]
+skips = ["B101", "B601"]  # Skip assert and shell usage in tests
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312', 'py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  \.git
+  | \.mypy_cache
+  | \.tox
+  | venv
+  | scripts/venv
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+exclude = [
+    "venv/",
+    "scripts/venv/",
+    "build/",
+    "dist/"
+]
+
+[tool.pylint.messages_control]
+disable = [
+    "C0114",  # missing-module-docstring
+    "C0115",  # missing-class-docstring
+    "C0116",  # missing-function-docstring
+    "R0903",  # too-few-public-methods
+    "R0913",  # too-many-arguments
+    "W0613",  # unused-argument
+    "C0103",  # invalid-name
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "security: marks tests as security tests",
+    "unit: marks tests as unit tests"
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*", "*/venv/*", "*/scripts/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+] 
