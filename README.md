@@ -303,6 +303,8 @@ We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for deta
 
 **AWDX** is created and maintained by **Partha Sarathi Kundu** (@pxkundu).
 
+**Independence Notice**: AWDX is developed independently and is not affiliated with, endorsed by, or sponsored by any organization, university, or company.
+
 ### Copyright & License
 - **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
 - **License**: MIT License - see [LICENSE](LICENSE) for details
@@ -328,7 +330,7 @@ For academic papers (BibTeX):
 ```
 
 ### Contact
-- **Email**: pxkundu2@shockers.wichita.edu
+- **Email**: inboxkundu@gmail.com
 - **GitHub**: [@pxkundu](https://github.com/pxkundu)
 - **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
 

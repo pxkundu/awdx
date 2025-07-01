@@ -6,8 +6,8 @@ authors:
   - family-names: "Kundu"
     given-names: "Partha Sarathi"
     orcid: "https://orcid.org/0000-0000-0000-0000"  # Add your ORCID if you have one
-    email: "pxkundu2@shockers.wichita.edu"
-    affiliation: "Wichita State University"
+    email: "inboxkundu@gmail.com"
+    affiliation: "Independent Developer"
 repository-code: "https://github.com/pxkundu/awdx"
 url: "https://github.com/pxkundu/awdx"
 repository-artifact: "https://pypi.org/project/awdx/"
@@ -40,7 +40,7 @@ preferred-citation:
   authors:
     - family-names: "Kundu"
       given-names: "Partha Sarathi"
-      email: "pxkundu2@shockers.wichita.edu"
+      email: "inboxkundu@gmail.com"
   year: 2024
   url: "https://github.com/pxkundu/awdx"
   repository-code: "https://github.com/pxkundu/awdx"

@@ -9,6 +9,8 @@
 - **Created**: 2024
 - **License**: MIT License (see [LICENSE](LICENSE))
 
+**Independence Notice**: AWDX is developed independently by Partha Sarathi Kundu and is not affiliated with, endorsed by, or sponsored by any organization, university, or company.
+
 ## Trademark Information
 
 The following are trademarks of Partha Sarathi Kundu:
@@ -97,7 +99,7 @@ This project operates under a dual framework:
 ## Contact for IP Matters
 
 For questions about intellectual property, licensing, or commercial use:
-- **Email**: pxkundu2@shockers.wichita.edu
+- **Email**: inboxkundu@gmail.com
 - **GitHub**: [@pxkundu](https://github.com/pxkundu)
 - **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
 

@@ -4,7 +4,9 @@ AWDX CLI - Main Command Line Interface
 
 Copyright (c) 2024 Partha Sarathi Kundu
 Licensed under the MIT License.
-Author: Partha Sarathi Kundu <pxkundu2@shockers.wichita.edu>
+Author: Partha Sarathi Kundu <inboxkundu@gmail.com>
+
+This software is developed independently and is not affiliated with any organization.
 """
 
 import typer

@@ -5,8 +5,10 @@ Gen AI-powered AWS DevSecOps CLI tool with natural language interface.
 Copyright (c) 2024 Partha Sarathi Kundu
 
 Licensed under the MIT License. See LICENSE file in the project root for details.
-Author: Partha Sarathi Kundu <pxkundu2@shockers.wichita.edu>
+Author: Partha Sarathi Kundu <inboxkundu@gmail.com>
 GitHub: https://github.com/pxkundu/awdx
+
+This software is developed independently and is not affiliated with any organization.
 """
 
 try:
@@ -30,5 +32,5 @@ def get_version() -> str:
 
 __version__ = get_version()
 __author__ = "Partha Sarathi Kundu"
-__email__ = "pxkundu2@shockers.wichita.edu"
+__email__ = "inboxkundu@gmail.com"
 __homepage__ = "https://github.com/pxkundu/awdx" 

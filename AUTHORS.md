@@ -3,10 +3,12 @@
 ## Original Author & Creator
 
 **Partha Sarathi Kundu** (@pxkundu)
-- Email: pxkundu2@shockers.wichita.edu
+- Email: inboxkundu@gmail.com
 - GitHub: https://github.com/pxkundu
 - Role: Original creator, architect, and lead developer of AWDX
 - Contributions: Complete architecture, all 6 modules (Profilyze, Costlyzer, IAMply, S3ntry, Secrex, SecuTide), AI engine integration
+
+**Independence Notice**: AWDX is developed independently by Partha Sarathi Kundu and is not affiliated with, endorsed by, or sponsored by any organization, university, or company.
 
 ## Intellectual Property Notice
 
