@@ -29,7 +29,7 @@ from .config_manager import AIConfig
 try:
     from awdx import __version__, __homepage__, __author__
 except ImportError:
-    __version__ = "0.1.0-dev"
+    __version__ = "0.0.11-dev"
     __homepage__ = "https://github.com/pxkundu/awdx"
     __author__ = "Partha Sarathi Kundu"
 
@@ -172,6 +172,87 @@ def ask_command(
     execute: bool = typer.Option(False, "--execute", "-x", help="Execute the suggested command"),
     explain: bool = typer.Option(True, "--explain/--no-explain", help="Show explanation")
 ):
+    """
+    Ask a question in natural language and get AWDX command suggestions.
+    
+    Examples:
+        awdx ask "show my AWS profiles"
+        awdx ask "what are my EC2 costs for last month"
+        awdx ask "audit my IAM security" --execute
+    """
+    try:
+        # Check if AI is available
+        if not is_ai_available():
+            console.print("❌ AI features are not available. Please configure GEMINI_API_KEY.", style="red")
+            console.print("Visit https://aistudio.google.com/apikey to get your API key.")
+            raise typer.Exit(1)
+        
+        # Process query directly - let exceptions bubble up for proper error formatting
+        result = asyncio.run(_process_query(query, profile))
+        
+        if result:
+            # Display result
+            _display_command_result(result, explain)
+            
+            # Execute if requested
+            if execute and result.confidence > 0.7:
+                _execute_command(result.awdx_command)
+            elif execute:
+                console.print(f"⚠️ Command confidence too low ({result.confidence:.2f}). Use --explain to see details.", style="yellow")
+        
+    except KeyboardInterrupt:
+        console.print("\n👋 Goodbye!")
+        raise typer.Exit(0)
+    except Exception as e:
+        from .exceptions import format_error_for_user, AIEngineError
+        
+        # Enhanced error detection and troubleshooting
+        error_msg = str(e).lower()
+        
+        if isinstance(e, AIEngineError):
+            console.print(format_error_for_user(e))
+        else:
+            console.print(f"❌ Error: {str(e)}", style="red")
+            
+            # Environment-specific troubleshooting
+            import platform
+            system = platform.system().lower()
+            is_wsl = "microsoft" in platform.release().lower() if system == "linux" else False
+            
+            console.print("\n🔧 [bold yellow]Troubleshooting Guide:[/bold yellow]")
+            
+            if "quota" in error_msg or "rate limit" in error_msg:
+                console.print("📊 [bold]API Quota Exceeded[/bold]")
+                console.print("   • Free tier limit reached")
+                console.print("   • Wait 1-2 minutes and try again")
+                console.print("   • Check usage: https://aistudio.google.com/")
+                
+            elif "network" in error_msg or "connection" in error_msg:
+                console.print("🌐 [bold]Network Issue[/bold]")
+                console.print("   • Check internet connection")
+                console.print("   • Try: ping google.com")
+                console.print("   • Disable VPN if using one")
+                
+            elif "invalid" in error_msg or "unauthorized" in error_msg:
+                console.print("🔑 [bold]Configuration Issue[/bold]")
+                console.print("   • Run: awdx ai configure")
+                console.print("   • Check API key is valid")
+                console.print("   • Ensure key starts with 'AIza'")
+                
+            elif is_wsl and ("browser" in error_msg or "xdg-open" in error_msg):
+                console.print("🔧 [bold]WSL Browser Issue[/bold]")
+                console.print("   • Use: awdx ai configure --no-browser")
+                console.print("   • Or manually visit: https://aistudio.google.com/apikey")
+                
+            else:
+                console.print("❓ [bold]General Issue[/bold]")
+                console.print("   • Run: awdx ai configure")
+                console.print("   • Update AWDX: pip install --upgrade awdx")
+                console.print("   • Check network connectivity")
+            
+            console.print("\n💡 [bold]Quick Fix:[/bold] awdx ai configure")
+        
+        raise typer.Exit(1)
     """
     Ask a question in natural language and get AWDX command suggestions.
     
@@ -394,10 +475,71 @@ def configure(
             console.print("Opening Google AI Studio in your browser...")
             try:
                 import webbrowser
-                webbrowser.open("https://aistudio.google.com/apikey")
-                console.print("✅ Browser opened to: https://aistudio.google.com/apikey")
-            except Exception:
-                console.print("⚠️  Could not open browser automatically.")
+                import platform
+                import os
+                
+                # Detect environment and provide specific guidance
+                system = platform.system().lower()
+                is_wsl = "microsoft" in platform.release().lower() if system == "linux" else False
+                is_windows = system == "windows"
+                is_macos = system == "darwin"
+                is_linux = system == "linux" and not is_wsl
+                
+                # Check for common browser opening issues
+                browser_opened = False
+                try:
+                    webbrowser.open("https://aistudio.google.com/apikey")
+                    console.print("✅ Browser opened to: https://aistudio.google.com/apikey")
+                    browser_opened = True
+                except Exception as e:
+                    browser_opened = False
+                    
+                if not browser_opened:
+                    console.print("⚠️  Could not open browser automatically.")
+                    console.print()
+                    
+                    # Environment-specific troubleshooting
+                    if is_wsl:
+                        console.print("🔧 [bold yellow]WSL Environment Detected[/bold yellow]")
+                        console.print("   Browser opening is not supported in WSL by default.")
+                        console.print("   Solutions:")
+                        console.print("   • Use: [bold]awdx ai configure --no-browser[/bold]")
+                        console.print("   • Or install WSLg: [link]https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps[/link]")
+                        console.print("   • Or manually visit: [link]https://aistudio.google.com/apikey[/link]")
+                        
+                    elif is_linux:
+                        console.print("🔧 [bold yellow]Linux Environment Detected[/bold yellow]")
+                        console.print("   No default browser found. Solutions:")
+                        console.print("   • Install a browser: sudo apt install firefox (Ubuntu/Debian)")
+                        console.print("   • Use: [bold]awdx ai configure --no-browser[/bold]")
+                        console.print("   • Or manually visit: [link]https://aistudio.google.com/apikey[/link]")
+                        
+                    elif is_macos:
+                        console.print("🔧 [bold yellow]macOS Environment Detected[/bold yellow]")
+                        console.print("   Browser opening failed. Solutions:")
+                        console.print("   • Check if Safari/Chrome is installed")
+                        console.print("   • Use: [bold]awdx ai configure --no-browser[/bold]")
+                        console.print("   • Or manually visit: [link]https://aistudio.google.com/apikey[/link]")
+                        
+                    elif is_windows:
+                        console.print("🔧 [bold yellow]Windows Environment Detected[/bold yellow]")
+                        console.print("   Browser opening failed. Solutions:")
+                        console.print("   • Check if Edge/Chrome is installed")
+                        console.print("   • Use: [bold]awdx ai configure --no-browser[/bold]")
+                        console.print("   • Or manually visit: [link]https://aistudio.google.com/apikey[/link]")
+                        
+                    else:
+                        console.print("🔧 [bold yellow]Unknown Environment[/bold yellow]")
+                        console.print("   Browser opening failed. Solutions:")
+                        console.print("   • Use: [bold]awdx ai configure --no-browser[/bold]")
+                        console.print("   • Or manually visit: [link]https://aistudio.google.com/apikey[/link]")
+                    
+                    console.print()
+                    browser = False
+                    
+            except Exception as e:
+                console.print(f"⚠️  Browser detection error: {str(e)}")
+                console.print("   Use: [bold]awdx ai configure --no-browser[/bold]")
                 browser = False
         
         if not browser:
@@ -478,14 +620,63 @@ def configure(
             console.print("• Network connectivity issues")
             console.print("• API server being slow")
             console.print("• Regional API restrictions")
+            console.print("• Corporate firewall/proxy blocking requests")
+            console.print("• VPN interference")
             connection_ok = typer.confirm("Continue with configuration anyway?")
         except Exception as e:
+            error_msg = str(e).lower()
             console.print(f"❌ Connection test failed: {str(e)}", style="red")
-            console.print("\nThis might be due to:")
-            console.print("• Invalid API key")
-            console.print("• Network connectivity issues")
-            console.print("• API quota limits")
-            console.print("• Missing dependencies")
+            console.print("\n🔧 [bold yellow]Troubleshooting Guide:[/bold yellow]")
+            
+            # Detect specific error types and provide targeted solutions
+            if "quota" in error_msg or "rate limit" in error_msg:
+                console.print("📊 [bold]API Quota/Rate Limit Issue[/bold]")
+                console.print("   • You've exceeded the free tier limits")
+                console.print("   • Wait a few minutes and try again")
+                console.print("   • Consider upgrading to paid Gemini API")
+                console.print("   • Check usage at: https://aistudio.google.com/")
+                
+            elif "invalid" in error_msg or "unauthorized" in error_msg:
+                console.print("🔑 [bold]API Key Issue[/bold]")
+                console.print("   • API key might be invalid or expired")
+                console.print("   • Generate a new key at: https://aistudio.google.com/apikey")
+                console.print("   • Ensure key starts with 'AIza'")
+                console.print("   • Check if key has proper permissions")
+                
+            elif "network" in error_msg or "connection" in error_msg:
+                console.print("🌐 [bold]Network Connectivity Issue[/bold]")
+                console.print("   • Check your internet connection")
+                console.print("   • Try: ping google.com")
+                console.print("   • Disable VPN if using one")
+                console.print("   • Check corporate firewall settings")
+                
+            elif "ssl" in error_msg or "certificate" in error_msg:
+                console.print("🔒 [bold]SSL/Certificate Issue[/bold]")
+                console.print("   • Corporate proxy/firewall interference")
+                console.print("   • Try: pip install --upgrade certifi")
+                console.print("   • Check system time is correct")
+                console.print("   • Contact IT if in corporate environment")
+                
+            elif "module" in error_msg or "import" in error_msg:
+                console.print("📦 [bold]Missing Dependencies[/bold]")
+                console.print("   • Run: pip install --upgrade awdx")
+                console.print("   • Or: pip install google-generativeai")
+                console.print("   • Check Python environment")
+                
+            else:
+                console.print("❓ [bold]General Issues[/bold]")
+                console.print("   • Invalid API key")
+                console.print("   • Network connectivity issues")
+                console.print("   • API quota limits")
+                console.print("   • Missing dependencies")
+                console.print("   • Regional API restrictions")
+            
+            console.print("\n💡 [bold]Quick Fixes:[/bold]")
+            console.print("   • Try again in a few minutes")
+            console.print("   • Generate a new API key")
+            console.print("   • Check network connectivity")
+            console.print("   • Update AWDX: pip install --upgrade awdx")
+            
             connection_ok = typer.confirm("Continue with configuration anyway?")
             
         if not connection_ok:

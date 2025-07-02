@@ -418,7 +418,7 @@ prompt-toolkit>=3.0.0         # Interactive prompts
 click>=8.1.0                  # Additional CLI features
 
 # Integration and Connectivity
-mcp-client>=0.1.0             # MCP integration
+mcp-client>=0.0.11             # MCP integration
 requests>=2.31.0              # HTTP client
 websockets>=11.0              # Real-time communication
 redis>=4.5.0                  # Caching and session storage

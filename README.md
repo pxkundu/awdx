@@ -373,5 +373,10 @@ For academic papers (BibTeX):
 - **GitHub**: [@pxkundu](https://github.com/pxkundu)
 - **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
 
+### Support & Troubleshooting
+- **📖 Troubleshooting Guide**: [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues and solutions
+- **🐛 Issues**: [GitHub Issues](https://github.com/pxkundu/awdx/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/pxkundu/awdx/discussions)
+
 ### Contributors
 See [AUTHORS.md](https://github.com/pxkundu/awdx/blob/development/AUTHORS.md) for a complete list of contributors and their contributions. 
