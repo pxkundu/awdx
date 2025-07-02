@@ -64,6 +64,45 @@ awdx --help
 
 ## Modules
 
+### AWDX with Gen AI + NLP based CLI execution
+🤖 **Revolutionary AI-powered natural language interface that understands your DevSecOps intent!** Chat with your AWS infrastructure using plain English. No more memorizing complex commands - just ask AWDX what you want to accomplish.
+
+![AWDX AI Interface](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png)
+
+```bash
+# Ask anything in natural language
+awdx ask "show me all my AWS profiles"
+🤖 Analyzing your request...
+💡 Intent: get_current_profile
+🎯 AWDX Command: awdx profile list
+✨ Alternative: aws configure list-profiles
+
+# Interactive AI chat session  
+awdx ai chat
+🤖 AWDX AI Assistant ready! Ask me anything about your AWS environment.
+💬 You: "What are my highest cost services this month?"
+🤖 I'll help you analyze your AWS costs. Running: awdx cost summary
+💰 Your top 3 services: EC2 ($567.89), S3 ($234.56), RDS ($123.45)
+💡 Suggestion: Consider EC2 reserved instances to save up to 30%
+
+# Get intelligent explanations
+awdx ai explain "awdx iam audit --fix"
+🧠 Command Breakdown:
+📋 awdx iam audit: Performs comprehensive IAM security assessment
+🔧 --fix flag: Automatically remediates safe issues
+⚠️  Security Note: Review changes before applying in production
+🎯 Best Practice: Run without --fix first to preview changes
+```
+
+💡 **AI Features:**
+• **Smart Intent Recognition** - 25+ supported DevSecOps intents
+• **Dual Intelligence** - AWDX commands + AWS CLI alternatives  
+• **Security-First** - Built-in security recommendations and warnings
+• **Context Awareness** - Understands your AWS environment and suggests workflows
+• **Interactive Chat** - Conversational DevSecOps automation
+
+📖 **Full Documentation:** [AI Engine Architecture](https://github.com/pxkundu/awdx/tree/development/docs/AI_FEATURES.md)
+
 ### Profile Management
 Manage AWS profiles with security best practices and validation.
 
