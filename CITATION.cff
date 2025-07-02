@@ -30,7 +30,7 @@ keywords:
   - Python
 license: MIT
 license-url: "https://github.com/pxkundu/awdx/blob/main/LICENSE"
-version: "0.0.9"
+version: "0.1.0"
 date-released: "2024-01-15"
 commit: "main"
 doi: ""  # Add DOI if you get one from Zenodo

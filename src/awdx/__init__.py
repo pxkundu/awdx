@@ -22,13 +22,13 @@ def get_version() -> str:
     Get the current AWDX version dynamically from package metadata.
     
     Returns:
-        str: Version string (e.g., "0.0.9")
+        str: Version string (e.g., "0.1.0")
     """
     try:
         return version("awdx")
     except PackageNotFoundError:
         # Fallback for development/testing when package isn't installed
-        return "0.0.9-dev"
+        return "0.1.0-dev"
 
 __version__ = get_version()
 __author__ = "Partha Sarathi Kundu"

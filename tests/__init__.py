@@ -16,5 +16,5 @@ Security scan: python tests/security_scanner.py
 try:
     from awdx import __version__, __author__
 except ImportError:
-    __version__ = "0.0.9-dev"
+    __version__ = "0.1.0-dev"
     __author__ = "Partha Sarathi Kundu" 
