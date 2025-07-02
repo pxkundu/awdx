@@ -51,6 +51,9 @@ jobs:
         echo "### Security Assessment Commands" >> $GITHUB_STEP_SUMMARY
         echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### AWDX AI Commands" >> $GITHUB_STEP_SUMMARY
+        echo "https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Usage in README.md" >> $GITHUB_STEP_SUMMARY
         echo "Replace local paths with:" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX.png\`" >> $GITHUB_STEP_SUMMARY
@@ -60,7 +63,8 @@ jobs:
         echo "- \`assests/AWDX_S3_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_SECRET_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_SECURITY_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png\`" >> $GITHUB_STEP_SUMMARY
-        
+        echo "- \`assests/AWDX_AI_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png\`" >> $GITHUB_STEP_SUMMARY
+      
     - name: Success message
       run: |
         echo "✅ Images successfully hosted on GitHub!"
@@ -73,5 +77,6 @@ jobs:
         echo "   S3 Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_S3_HELP.png"
         echo "   Secret Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png"
         echo "   Security Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png"
+        echo "   AWDX AI Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png"
         echo ""
         echo "📝 Your README.md is already updated to use these URLs for PyPI display!" 

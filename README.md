@@ -346,7 +346,7 @@ We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for deta
 
 ### Copyright & License
 - **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
-- **License**: MIT License - see [LICENSE](LICENSE) for details
+- **License**: MIT License - see [LICENSE](https://github.com/pxkundu/awdx/blob/development/LICENSE) for details
 - **Trademark**: "AWDX" and "AWS DevOps X" are trademarks of Partha Sarathi Kundu
 
 ### Citation
@@ -374,4 +374,4 @@ For academic papers (BibTeX):
 - **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
 
 ### Contributors
-See [AUTHORS.md](AUTHORS.md) for a complete list of contributors and their contributions. 
+See [AUTHORS.md](https://github.com/pxkundu/awdx/blob/development/AUTHORS.md) for a complete list of contributors and their contributions. 

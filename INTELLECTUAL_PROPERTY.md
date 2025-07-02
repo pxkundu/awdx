@@ -7,7 +7,7 @@
 - **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
 - **Original Author**: Partha Sarathi Kundu (@pxkundu)
 - **Created**: 2024
-- **License**: MIT License (see [LICENSE](LICENSE))
+- **License**: MIT License (see [LICENSE](https://github.com/pxkundu/awdx/blob/development/LICENSE))
 
 **Independence Notice**: AWDX is developed independently by Partha Sarathi Kundu and is not affiliated with, endorsed by, or sponsored by any organization, university, or company.
 

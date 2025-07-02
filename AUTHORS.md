@@ -15,7 +15,7 @@
 **AWDX (AWS DevOps X)** is the intellectual property of Partha Sarathi Kundu.
 
 - **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
-- **License**: Released under MIT License (see [LICENSE](LICENSE))
+- **License**: Released under MIT License (see [LICENSE](https://github.com/pxkundu/awdx/blob/development/LICENSE))
 - **Trademark**: "AWDX" and "AWS DevOps X" are trademarks of Partha Sarathi Kundu
 
 ## Core Contributors
