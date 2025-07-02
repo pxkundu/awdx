@@ -64,6 +64,45 @@ awdx --help
 
 ## Modules
 
+### AWDX with Gen AI + NLP based CLI execution
+🤖 **Revolutionary AI-powered natural language interface that understands your DevSecOps intent!** Chat with your AWS infrastructure using plain English. No more memorizing complex commands - just ask AWDX what you want to accomplish.
+
+![AWDX AI Interface](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png)
+
+```bash
+# Ask anything in natural language
+awdx ask "show me all my AWS profiles"
+🤖 Analyzing your request...
+💡 Intent: get_current_profile
+🎯 AWDX Command: awdx profile list
+✨ Alternative: aws configure list-profiles
+
+# Interactive AI chat session  
+awdx ai chat
+🤖 AWDX AI Assistant ready! Ask me anything about your AWS environment.
+💬 You: "What are my highest cost services this month?"
+🤖 I'll help you analyze your AWS costs. Running: awdx cost summary
+💰 Your top 3 services: EC2 ($567.89), S3 ($234.56), RDS ($123.45)
+💡 Suggestion: Consider EC2 reserved instances to save up to 30%
+
+# Get intelligent explanations
+awdx ai explain "awdx iam audit --fix"
+🧠 Command Breakdown:
+📋 awdx iam audit: Performs comprehensive IAM security assessment
+🔧 --fix flag: Automatically remediates safe issues
+⚠️  Security Note: Review changes before applying in production
+🎯 Best Practice: Run without --fix first to preview changes
+```
+
+💡 **AI Features:**
+• **Smart Intent Recognition** - 25+ supported DevSecOps intents
+• **Dual Intelligence** - AWDX commands + AWS CLI alternatives  
+• **Security-First** - Built-in security recommendations and warnings
+• **Context Awareness** - Understands your AWS environment and suggests workflows
+• **Interactive Chat** - Conversational DevSecOps automation
+
+📖 **Full Documentation:** [AI Engine Architecture](https://github.com/pxkundu/awdx/tree/development/docs/AI_FEATURES.md)
+
 ### Profile Management
 Manage AWS profiles with security best practices and validation.
 
@@ -295,4 +334,49 @@ We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for deta
 - 📖 **Documentation:** [GitHub Wiki](https://github.com/pxkundu/awdx/wiki)
 - 🐛 **Issues:** [GitHub Issues](https://github.com/pxkundu/awdx/issues)
 - 💬 **Discussions:** [GitHub Discussions](https://github.com/pxkundu/awdx/discussions)
-- 📄 **License:** [MIT License](LICENSE) 
+- 📄 **License:** [MIT License](LICENSE)
+
+---
+
+## 👨‍💻 Author & Attribution
+
+**AWDX** is created and maintained by **Partha Sarathi Kundu** (@pxkundu).
+
+**Independence Notice**: AWDX is developed independently and is not affiliated with, endorsed by, or sponsored by any organization, university, or company.
+
+### Copyright & License
+- **Copyright**: © 2024 Partha Sarathi Kundu. All rights reserved.
+- **License**: MIT License - see [LICENSE](https://github.com/pxkundu/awdx/blob/development/LICENSE) for details
+- **Trademark**: "AWDX" and "AWS DevOps X" are trademarks of Partha Sarathi Kundu
+
+### Citation
+If you use AWDX in academic research or commercial projects, please cite:
+
+```
+Kundu, P. S. (2024). AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool. 
+GitHub. https://github.com/pxkundu/awdx
+```
+
+For academic papers (BibTeX):
+```bibtex
+@software{awdx2024,
+  author = {Kundu, Partha Sarathi},
+  title = {AWDX: AWS DevOps X - Gen AI-powered AWS DevSecOps CLI tool},
+  year = {2024},
+  url = {https://github.com/pxkundu/awdx},
+  note = {MIT License}
+}
+```
+
+### Contact
+- **Email**: inboxkundu@gmail.com
+- **GitHub**: [@pxkundu](https://github.com/pxkundu)
+- **Project**: [https://github.com/pxkundu/awdx](https://github.com/pxkundu/awdx)
+
+### Support & Troubleshooting
+- **📖 Troubleshooting Guide**: [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues and solutions
+- **🐛 Issues**: [GitHub Issues](https://github.com/pxkundu/awdx/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/pxkundu/awdx/discussions)
+
+### Contributors
+See [AUTHORS.md](https://github.com/pxkundu/awdx/blob/development/AUTHORS.md) for a complete list of contributors and their contributions. 

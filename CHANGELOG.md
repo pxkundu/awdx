@@ -8,6 +8,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **IAMply Module**: Comprehensive AWS IAM management and security analysis
+  - **Basic IAM Management**: User, role, policy, and group management with security insights
+  - **Security Audit**: Comprehensive IAM security audit with risk assessment and export capabilities
+  - **Access Analysis**: Effective permission analysis and access pattern identification
+  - **Compliance Checking**: CIS, SOC2, and PCI compliance validation
+  - **Smart Recommendations**: AI-powered recommendations with automated remediation
+  - **Data Export**: JSON/CSV export for external analysis and reporting
+  - **Real-world DevSecOps Use Cases**: Incident response, CI/CD integration, compliance automation
+  - **Risk Assessment**: Critical, high, medium, and low risk categorization
+  - **Automated Remediation**: Safe auto-fix capabilities with dry-run mode
+  - **Permission Analysis**: Deep permission analysis with privilege escalation detection
+- **Costlyzer Module**: Comprehensive AWS cost analysis and optimization capabilities
+  - Cost summary and breakdown by service
+  - Cost trends analysis with pattern identification
+  - Cost monitoring alerts and budget management
+  - Cost optimization recommendations with service-specific tips
+  - Data export functionality (CSV/JSON) for external analysis
+  - Budget creation and management tools
+  - **Smart Anomaly Detection**: Statistical analysis to detect unusual spending patterns
+  - **Cost Forecasting**: Linear regression-based predictions with confidence intervals
+  - **Cost Comparison**: Side-by-side analysis across different time periods
+  - **Tag-Based Analysis**: Cost allocation analysis by resource tags
+  - **Savings Calculator**: ROI analysis with multiple scenarios (conservative/moderate/aggressive)
 - Comprehensive community standards and contribution guidelines
 - GitHub issue templates for bug reports, feature requests, and documentation
 - Enhanced pull request template with approval requirements
@@ -26,6 +49,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated release workflow to follow proper branching strategy
 - Enhanced testing guidelines with commented examples
 - Updated documentation structure and standards
+- Enhanced main README with Costlyzer module documentation and examples
+- **Simplified root README**: Cleaned up and made more concise, focusing on high-level use cases
+- **Improved PyPI metadata**: Added keywords, classifiers, and GitHub repository links
+- **Modular documentation**: Moved detailed command documentation to module-specific READMEs
 
 ## [0.0.4] - 2025-06-25
 
