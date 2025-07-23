@@ -8,4 +8,4 @@ access control analysis, and automated remediation with intelligent security ins
 
 from .s3_commands import s3_app
 
-__all__ = ["s3_app"] 
+__all__ = ["s3_app"]

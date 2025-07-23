@@ -24,9 +24,11 @@
 - **S3 Security:** Complete S3 bucket security assessment and compliance monitoring
 - **Secret Management:** Automated secret discovery, rotation, and compliance
 - **Security Assessment:** Comprehensive security posture and vulnerability scanning
+- **Task Automation:** 40+ high-level DevSecOps automation commands with AI enhancement
+- **AI-Powered Interface:** Natural language commands with Google Gemini integration
+- **MCP Server:** Model Context Protocol integration for AI assistants
 - **Smart Suggestions:** Receive actionable best-practice tips after every action
 - **Human-Friendly CLI:** Simple, memorable commands and interactive prompts
-- **Future:** AI/NLP-powered natural language commands
 
 ---
 
@@ -71,11 +73,11 @@ awdx --help
 
 ```bash
 # Ask anything in natural language
-awdx ask "show me all my AWS profiles"
+awdx ai ask "show me all my AWS profiles"
 🤖 Analyzing your request...
-💡 Intent: get_current_profile
+💡 Intent: list_profiles
 🎯 AWDX Command: awdx profile list
-✨ Alternative: aws configure list-profiles
+✨ Confidence: 95%
 
 # Interactive AI chat session  
 awdx ai chat
@@ -96,12 +98,50 @@ awdx ai explain "awdx iam audit --fix"
 
 💡 **AI Features:**
 • **Smart Intent Recognition** - 25+ supported DevSecOps intents
-• **Dual Intelligence** - AWDX commands + AWS CLI alternatives  
+• **Google Gemini Integration** - Powered by advanced AI models
 • **Security-First** - Built-in security recommendations and warnings
 • **Context Awareness** - Understands your AWS environment and suggests workflows
 • **Interactive Chat** - Conversational DevSecOps automation
 
-📖 **Full Documentation:** [AI Engine Architecture](https://github.com/pxkundu/awdx/tree/development/docs/AI_FEATURES.md)
+📖 **Full Documentation:** [AI Features](docs/AI_FEATURES.md) | [AI Engine Architecture](https://github.com/pxkundu/awdx/tree/development/docs/AIENGINEARCH.md)
+
+### MCP Server Integration
+🔌 **Model Context Protocol (MCP) server for AI assistant integration!** Connect AWDX to Claude Desktop, ChatGPT, and other AI assistants for seamless DevSecOps automation.
+
+![AWDX MCP server tools](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_MCP.png)
+
+```bash
+# Start MCP server
+awdx mcp start
+🔌 MCP server is ready to accept connections!
+Connect your AI assistant to: localhost:3000
+
+# List available tools
+awdx mcp tools
+Profile Management
+ awdx_profile_list    List all AWS profiles configured in AWDX 
+ awdx_profile_switch  Switch to a different AWS profile        
+ awdx_profile_add     Add a new AWS profile                    
+
+Cost Analysis
+ awdx_cost_summary   Get AWS cost summary and analysis     
+ awdx_cost_trends    Analyze cost trends over time         
+ awdx_cost_optimize  Get cost optimization recommendations 
+
+# Test connection
+awdx mcp test
+✓ Connection successful!
+Server: AWDX MCP Server v1.0.0
+```
+
+💡 **MCP Features:**
+• **17 MCP Tools** - All AWDX capabilities exposed as standardized tools
+• **AI Assistant Integration** - Connect to Claude Desktop, ChatGPT, and custom assistants
+• **Real-time AWS Data** - Live access to AWS resources and security posture
+• **Secure Communication** - Local execution with AWS credential management
+• **Standardized Protocol** - Compatible with MCP-compliant AI assistants
+
+📖 **Full Documentation:** [MCP Integration](https://github.com/pxkundu/awdx/tree/development/docs/MCP_INTEGRATION.md)
 
 ### Profile Management
 Manage AWS profiles with security best practices and validation.
@@ -261,6 +301,57 @@ awdx secret monitor --days 30
 
 📖 **Full Documentation:** [Secrex Module README](https://github.com/pxkundu/awdx/tree/development/Secrex)
 
+### Task Automation
+🚀 **High-level DevSecOps task automation and productivity commands!** Streamline your DevSecOps workflows with intelligent automation that combines multiple AWS services into single, powerful commands.
+
+![AWDX Task Commands](https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_TASK.png)
+
+```bash
+# Comprehensive security audit
+awdx task security-audit --comprehensive --fix-safe
+🔍 Starting comprehensive security audit across AWS services...
+🔐 IAM Security: Checking users, roles, and policies
+🛡️ EC2 Security: Analyzing security groups and encryption
+🪣 S3 Security: Validating bucket configurations
+🔐 Secrets: Auditing secret rotation and age
+📊 Audit Summary: 3 high issues, 5 medium issues found
+🔧 Auto-fixing safe issues: 2 issues resolved
+
+# Cost optimization with AI insights
+awdx task cost-optimize --auto-fix --dry-run
+💰 Analyzing AWS costs for optimization opportunities...
+🔍 EC2 Optimization: Found 3 oversized instances
+🗄️ RDS Optimization: 2 instances can be downsized
+📊 Potential Savings: $234.56/month (15% reduction)
+🤖 AI Recommendation: Consider reserved instances for predictable workloads
+
+# Compliance validation
+awdx task compliance-check --framework sox --output pdf
+📋 Validating SOX compliance across AWS services...
+✅ IAM Controls: PASS
+✅ Data Protection: PASS
+❌ Access Logging: FAIL (2 issues)
+📄 Generating compliance report: sox_compliance_report.pdf
+
+# Continuous security monitoring
+awdx task security-monitor --continuous --alert
+🛡️ Starting continuous security monitoring...
+📊 Monitoring: IAM changes, S3 access, EC2 security
+🚨 Alerts: Configured for critical security events
+⏰ Interval: 5 minutes
+📱 Notifications: Slack, email, SMS
+```
+
+💡 **Task Module Features:**
+• **40+ Automation Commands** - From basic security audits to complex infrastructure automation
+• **AI-Enhanced Workflows** - Intelligent insights and recommendations when AI is configured
+• **Multi-Service Integration** - Combines IAM, EC2, S3, RDS, Lambda, and more
+• **Compliance Frameworks** - SOX, HIPAA, PCI-DSS, SOC2, ISO27001, NIST support
+• **Rich Output Formats** - Table, JSON, CSV, and PDF reports
+• **Graceful AI Fallback** - Works perfectly without AI configuration
+
+📖 **Full Documentation:** [Task Module Summary](docs/TASK_MODULE_SUMMARY.md)
+
 ### Security Assessment
 Comprehensive security posture assessment, vulnerability scanning, and incident response.
 
@@ -300,10 +391,10 @@ awdx security incident --type breach
 ## Future Plans
 
 ### Upcoming Features
-- **AI-Powered Insights:** Natural language queries and intelligent recommendations
 - **Multi-Cloud Support:** Extend beyond AWS to Azure and GCP
 - **Integration Hub:** Connect with popular DevOps tools and CI/CD pipelines
 - **Real-time Monitoring:** Live cost and security monitoring with alerts
+- **Advanced AI:** Multi-modal processing and workflow automation
 
 ### Enterprise Features
 - **Team Collaboration:** Multi-user support with role-based access
@@ -324,8 +415,11 @@ Active development with comprehensive module coverage. The project follows a mod
 - ✅ **S3ntry Module:** Complete with security assessment and compliance
 - ✅ **Secrex Module:** Complete with secret management and rotation
 - ✅ **SecuTide Module:** Complete with security posture and incident response
-- 🚧 **Core Infrastructure:** Stable and production-ready
-- 📋 **Documentation:** Comprehensive guides and examples
+- ✅ **Task Module:** Complete with 40+ high-level automation commands
+- ✅ **AI Engine:** Complete with Google Gemini integration and natural language processing
+- ✅ **MCP Server:** Complete with Model Context Protocol integration
+- ✅ **Core Infrastructure:** Stable and production-ready
+- ✅ **Documentation:** Comprehensive guides and examples
 
 ### Contributing
 We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.

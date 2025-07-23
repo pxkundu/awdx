@@ -212,7 +212,7 @@ def _validate_awdx_command(self, command: str) -> bool:
 
 ## 📞 **Security Contact**
 
-For security issues, please email: **pxkundu2@shockers.wichita.edu**
+For security issues, please email: **inboxkundu@gmail.com**
 
 **Responsible Disclosure**: We follow responsible disclosure practices for security vulnerabilities.
 

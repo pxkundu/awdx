@@ -1,6 +1,6 @@
 [project]
 name = "awdx"
-version = "0.0.11"
+version = "0.0.15"
 description = "AWS DevOps X: Gen AI-powered AWS DevSecOps CLI tool with natural language interface."
 authors = [
   { name = "Partha Sarathi Kundu", email = "inboxkundu@gmail.com" }
@@ -164,7 +164,11 @@ markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
     "integration: marks tests as integration tests",
     "security: marks tests as security tests",
-    "unit: marks tests as unit tests"
+    "unit: marks tests as unit tests",
+    "ai: marks tests as AI-related tests",
+    "task: marks tests as task module tests",
+    "mcp: marks tests as MCP-related tests",
+    "fast: marks tests as fast tests (mocked/optimized)"
 ]
 
 [tool.coverage.run]

@@ -8,4 +8,4 @@ and automated remediation with intelligent security insights.
 
 from .security_commands import security_app
 
-__all__ = ["security_app"] 
+__all__ = ["security_app"]

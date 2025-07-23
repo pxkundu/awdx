@@ -8,4 +8,4 @@ with intelligent security insights and compliance features.
 
 from .secret_commands import secret_app
 
-__all__ = ["secret_app"] 
+__all__ = ["secret_app"]

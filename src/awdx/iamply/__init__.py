@@ -7,4 +7,4 @@ Provides commands for IAM user, role, policy, and access management with securit
 
 from .iam_commands import iam_app
 
-__all__ = ["iam_app"] 
+__all__ = ["iam_app"]

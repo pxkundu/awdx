@@ -64,6 +64,8 @@ jobs:
         echo "- \`assests/AWDX_SECRET_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_SECURITY_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png\`" >> $GITHUB_STEP_SUMMARY
         echo "- \`assests/AWDX_AI_HELP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_MCP.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_MCP.png\`" >> $GITHUB_STEP_SUMMARY
+        echo "- \`assests/AWDX_TASK.png\` → \`https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_TASK.png\`" >> $GITHUB_STEP_SUMMARY
       
     - name: Success message
       run: |
@@ -78,5 +80,7 @@ jobs:
         echo "   Secret Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECRET_HELP.png"
         echo "   Security Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_SECURITY_HELP.png"
         echo "   AWDX AI Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDXAI.png"
+        echo "   AWDX MCP: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_MCP.png"
+        echo "   AWDX Task Commands: https://raw.githubusercontent.com/pxkundu/awdx/development/assests/AWDX_TASK.png"
         echo ""
         echo "📝 Your README.md is already updated to use these URLs for PyPI display!" 
