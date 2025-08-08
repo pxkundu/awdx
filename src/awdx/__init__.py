@@ -23,7 +23,7 @@ try:
     import importlib.metadata
     __version__ = importlib.metadata.version("awdx")
 except ImportError:
-    __version__ = "0.0.15"  # Fallback version
+    __version__ = "0.0.16"  # Fallback version
 __author__ = "AWDX Team"
 __description__ = "AWS DevSecOps CLI Tool for Security, Cost, and Compliance Management"
 __homepage__ = "https://github.com/pxkundu/awdx"
